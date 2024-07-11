@@ -1,0 +1,24 @@
+<!-- templates/browse.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Groceries</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Browse Groceries</h1>
+        <ul>
+            {% for product in products %}
+                <li>
+                    <strong>{{ product.name }}</strong> - ₹{{ product.price }}
+                    <a href="/add_to_cart/{{ product.id }}">Add to Cart</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/cart">Go to Cart</a>
+    </div>
+</body>
+</html>
